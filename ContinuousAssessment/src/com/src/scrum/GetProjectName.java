@@ -1,4 +1,5 @@
 package com.src.scrum;
+
 import java.util.*;
 import java.io.*;
 
@@ -14,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/GetProjectName")
 public class GetProjectName extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -24,26 +25,25 @@ public class GetProjectName extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		RetrieveProjectName rj=new RetrieveProjectName();
-		ArrayList <String> projarray=new ArrayList<String>();
-		projarray=rj.getNames();
-		request.setAttribute("projects", projarray);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/Index.jsp");
-		rd.forward(request, response);
-		
-		
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RetrieveProjectName rj = new RetrieveProjectName();
+        ArrayList<String> projarray = new ArrayList<String>();
+        projarray = rj.getNames();
+        request.setAttribute("projects", projarray);
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/Index.jsp");
+        rd.forward(request, response);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+    }
 
 }

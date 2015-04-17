@@ -1,4 +1,5 @@
 package com.indi.student;
+
 import java.util.*;
 import java.io.IOException;
 
@@ -14,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Redirect")
 public class Redirect extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -24,27 +25,26 @@ public class Redirect extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		// TODO Auto-generated method stub
-		ArrayList arr=new ArrayList();
-		RetrieveStudentNames obj=new RetrieveStudentNames();
-		arr=obj.getNames();
-		request.setAttribute("students", arr);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/AllWork.jsp");
-		rd.forward(request, response);
-		
-		
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        ArrayList arr = new ArrayList();
+        RetrieveStudentNames obj = new RetrieveStudentNames();
+        arr = obj.getNames();
+        request.setAttribute("students", arr);
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/AllWork.jsp");
+        rd.forward(request, response);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+    }
 
 }
